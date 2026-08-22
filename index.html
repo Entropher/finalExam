@@ -3,8 +3,241 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final Project</title>
+    <meta
+      name="description"
+      content="A creative portfolio for a frontend developer."
+    />
+    <title>Quji Bichia | Frontend Developer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="site-header container">
+      <a class="logo" href="#top" aria-label="Home">Quji Bichia</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#top">Home</a>
+        <a href="#about">About Me</a><a href="#services">Services</a>
+        <a href="#projects">Projects</a><a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a
+        ><a class="nav-cta" href="#contact">Download CV</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">Hi! I am</p>
+          <p class="accent-name">Quji Bichia</p>
+          <h1>Frontend<br />Developer</h1>
+          <p class="body-copy">
+            I create clear, useful and memorable digital experiences that
+            connect people with products they love.
+          </p>
+          <a class="button" href="#contact">Hire Me</a>
+        </div>
+        <div class="portrait-column">
+          <div
+            class="portrait portrait-hero"
+            data-photo="Add your portrait here"
+            role="img"
+            aria-label="Portrait placeholder"
+          ></div>
+          <div class="socials hero-socials" aria-label="Social links">
+            <a href="#contact" aria-label="GitHub">GH</a>
+            <a href="#contact" aria-label="LinkedIn">in</a>
+            <a href="#contact" aria-label="X (Twitter)">X</a>
+            <a
+              class="custom-social"
+              href="#contact"
+              aria-label="Custom social link"
+              >+</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="about container split-section" id="about">
+        <div
+          class="portrait portrait-about"
+          data-photo="Add your photo here"
+          role="img"
+          aria-label="Photo placeholder"
+        ></div>
+        <div class="section-copy">
+          <h2>About Me</h2>
+          <p class="body-copy">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+            nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
+            tempus pharetra
+          </p>
+          <div class="skills">
+            <div class="skill">
+              <span>UI Design</span><i><b style="width: 90%"></b></i>
+            </div>
+            <div class="skill">
+              <span>Website Design</span><i><b style="width: 85%"></b></i>
+            </div>
+            <div class="skill">
+              <span>App Design</span><i><b style="width: 80%"></b></i>
+            </div>
+            <div class="skill">
+              <span>Graphic Design</span><i><b style="width: 88%"></b></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services container" id="services">
+        <div class="section-heading">
+          <h2>Services</h2>
+          <p class="body-copy">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+            nibh lectus netus in. Aliquet donec morbi convallis pretium
+          </p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon">▣</span>
+            <h3>UI/UX</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
+              interdum
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">▤</span>
+            <h3>Web Design</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
+              interdum
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">▦</span>
+            <h3>App Design</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
+              interdum
+            </p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">▧</span>
+            <h3>Graphic Design</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
+              interdum
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="projects container" id="projects">
+        <div class="section-heading">
+          <h2>My Projects</h2>
+          <p class="body-copy">
+            Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam
+            mauris est risus lectus. Phasellus consequat urna tellus
+          </p>
+        </div>
+        <div class="filter-list" aria-label="Project filters">
+          <button class="active" type="button">All</button
+          ><button type="button">UI/UX</button
+          ><button type="button">Web Design</button
+          ><button type="button">App Design</button
+          ><button type="button">Graphic Design</button>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div
+              class="project-image project-one"
+              data-photo="Project image"
+            ></div>
+            <p>WEB DESIGN</p>
+            <h3>AirCalling Landing Page Design</h3>
+          </article>
+          <article class="project">
+            <div
+              class="project-image project-two"
+              data-photo="Project image"
+            ></div>
+            <p>WEB DESIGN</p>
+            <h3>Business Landing Page Design</h3>
+          </article>
+          <article class="project">
+            <div
+              class="project-image project-three"
+              data-photo="Project image"
+            ></div>
+            <p>WEB DESIGN</p>
+            <h3>Ecom Web Page Design</h3>
+          </article>
+        </div>
+      </section>
+      <section class="testimonials container" id="testimonials">
+        <div class="section-heading">
+          <h2>Testimonials</h2>
+          <p class="body-copy">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+            nibh lectus netus in. Aliquet donec morbi convallis pretium
+          </p>
+        </div>
+        <article class="testimonial">
+          <div class="avatar" data-photo="Photo"></div>
+          <div>
+            <p>
+              “Lorem ipsum dolor sit amet consectetur. In enim cursus odio
+              accumsan. Id leo urna velit neque mattis id tellus arcu
+              condimentum. Augue dictum dolor elementum convallis dignissim
+              malesuada commodo ultrices.”
+            </p>
+            <strong>Name</strong><small>CEO</small>
+          </div>
+        </article>
+        <div class="dots" aria-label="Testimonial slides">
+          <i></i><i class="active"></i><i></i><i></i>
+        </div>
+      </section>
+      <section class="contact container" id="contact">
+        <div class="section-heading">
+          <h2>Let's work together</h2>
+          <p class="body-copy">
+            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+            nibh lectus netus in. Aliquet donec morbi convallis pretium
+          </p>
+        </div>
+        <form class="contact-form">
+          <div class="form-row">
+            <input
+              type="text"
+              placeholder="Your Name"
+              aria-label="Your name"
+            /><input
+              type="email"
+              placeholder="Your Email"
+              aria-label="Your email"
+            /><input
+              type="text"
+              placeholder="Your Website"
+              aria-label="Your website"
+            />
+          </div>
+          <textarea
+            placeholder="Tell me about your project"
+            aria-label="Tell me about your project"
+          ></textarea
+          ><button class="button" type="submit">Contact Me</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#top">Home</a><a href="#about">About Me</a
+        ><a href="#services">Services</a><a href="#projects">Projects</a
+        ><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a href="#contact" aria-label="GitHub">GH</a
+        ><a href="#contact" aria-label="LinkedIn">in</a
+        ><a href="#contact" aria-label="X (Twitter)">X</a
+        ><a href="#contact" aria-label="Custom">+</a>
+      </div>
+      <p>© 2026 All Rights Reserved, Inc.</p>
+    </footer>
+  </body>
 </html>
