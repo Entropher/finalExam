@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 :root {
   --bg: #1b1b1b;
@@ -21,7 +21,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Poppins", sans-serif;
 }
 a {
   color: inherit;
@@ -44,7 +44,7 @@ textarea {
 }
 .logo {
   font:
-    700 24px Arial,
+    28px "Bebas Neue",
     sans-serif;
   letter-spacing: 1px;
 }
@@ -58,9 +58,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 25px;
-  font:
-    11px Arial,
-    sans-serif;
+  font-size: 21px;
   color: #d1d1d1;
 }
 .nav a:hover,
@@ -74,11 +72,12 @@ textarea {
   padding: 12px 20px;
   border: 0;
   border-radius: 2px;
-  font:
-    700 11px Arial,
-    sans-serif;
+  font-weight: 700;
   cursor: pointer;
   display: inline-block;
+}
+.button {
+  font-size: 21px;
 }
 .hero {
   min-height: 525px;
@@ -93,17 +92,15 @@ textarea {
 .eyebrow {
   color: var(--text);
   margin: 0 0 7px;
-  font:
-    700 12px Arial,
-    sans-serif;
+  font-size: 24px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .accent-name {
   margin: 0 0 2px;
-  font:
-    700 15px Arial,
-    sans-serif;
+  font-size: 32px;
+  font-weight: 700;
 }
 h1,
 h2,
@@ -112,36 +109,35 @@ p {
   margin-top: 0;
 }
 h1 {
-  font:
-    700 clamp(48px, 6vw, 78px)/0.92 Arial,
-    sans-serif;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.92;
+  font-weight: 700;
   letter-spacing: -2px;
   margin-bottom: 25px;
 }
+.heading-frontend,
+.heading-developer {
+  display: block;
+  font-size: 100px;
+}
 h2 {
-  font:
-    700 34px/1.05 Arial,
-    sans-serif;
+  font-size: 65px;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 h3 {
-  font:
-    700 14px Arial,
-    sans-serif;
+  font-size: 32px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 .body-copy {
   color: var(--muted);
-  font:
-    12px/1.6 Arial,
-    sans-serif;
+  font-size: 21px;
+  line-height: 1.6;
   max-width: 470px;
   margin-bottom: 24px;
 }
 .portrait {
-  background:
-    radial-gradient(circle at 50% 35%, #e9b18e 0 10%, transparent 10.5%),
-    linear-gradient(145deg, #f7f4ec 0 55%, #ffb412 55%);
   border: 8px solid var(--surface);
   border-radius: 50%;
   position: relative;
@@ -157,14 +153,15 @@ h3 {
   border-radius: inherit;
   background: rgba(27, 27, 27, 0.56);
   color: white;
-  font:
-    700 10px Arial,
-    sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   text-align: center;
 }
 .portrait-hero {
   width: 310px;
   height: 310px;
+  background: #fff;
+  object-fit: cover;
 }
 .portrait-column {
   display: flex;
@@ -177,9 +174,8 @@ h3 {
   justify-content: center;
   gap: 13px;
   color: var(--surface);
-  font:
-    700 11px Arial,
-    sans-serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 .socials a {
   width: 28px;
@@ -188,7 +184,16 @@ h3 {
   place-items: center;
   border: 1px solid #777;
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 14px;
+}
+.socials img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.socials .social-icon-large {
+  width: 24px;
+  height: 24px;
 }
 .hero-socials {
   gap: 10px;
@@ -214,13 +219,12 @@ h3 {
 .portrait-about {
   width: 280px;
   height: 280px;
+  object-fit: cover;
   justify-self: center;
 }
 .skills {
   margin-top: 32px;
-  font:
-    11px Arial,
-    sans-serif;
+  font-size: 24px;
 }
 .skill {
   display: grid;
@@ -280,15 +284,12 @@ h3 {
 }
 .service-icon {
   color: var(--orange);
-  font:
-    25px Arial,
-    sans-serif;
+  font-size: 25px;
 }
 .service-card p {
   color: #666;
-  font:
-    11px/1.5 Arial,
-    sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
 }
 .filter-list {
   display: flex;
@@ -303,9 +304,7 @@ h3 {
   border-radius: 2px;
   background: var(--surface);
   color: #333;
-  font:
-    10px Arial,
-    sans-serif;
+  font-size: 24px;
   cursor: pointer;
 }
 .filter-list .active,
@@ -322,12 +321,7 @@ h3 {
   aspect-ratio: 1 / 0.85;
   border: 7px solid var(--surface);
   border-radius: 3px;
-  background: linear-gradient(
-    135deg,
-    #d7e5e8 0 45%,
-    #e8cda4 45% 62%,
-    #5863a3 62%
-  );
+  background: #000;
   position: relative;
 }
 .project-image::after,
@@ -339,26 +333,16 @@ h3 {
   place-items: center;
   background: rgba(27, 27, 27, 0.45);
   color: white;
-  font: 700 10px Arial;
-}
-.project-two {
-  background: linear-gradient(145deg, #142f39, #5e9d8d 50%, #e9ddbf 50%);
-}
-.project-three {
-  background: linear-gradient(
-    145deg,
-    #f2e6dc 20%,
-    #f47b43 20% 46%,
-    #fff 46% 74%,
-    #e6b5a5 74%
-  );
+  font-size: 10px;
+  font-weight: 700;
 }
 .project p {
-  font: 700 9px Arial;
+  font-size: 14px;
+  font-weight: 700;
   margin: 10px 0 3px;
 }
 .project h3 {
-  font-size: 12px;
+  font-size: 21px;
 }
 .testimonial {
   width: min(700px, 100%);
@@ -372,21 +356,29 @@ h3 {
   border-radius: 4px;
 }
 .avatar {
-  flex: 0 0 74px;
-  aspect-ratio: 1;
+  flex: 0 0 235px;
+  width: 235px;
+  height: 235px;
   border-radius: 50%;
-  background: linear-gradient(140deg, #dae8ec, #938373);
   position: relative;
   overflow: hidden;
+  object-fit: cover;
 }
 .testimonial p {
-  font: 11px/1.5 Arial;
+  font-size: 21px;
+  line-height: 1.5;
   color: #5e5e5e;
 }
 .testimonial strong,
 .testimonial small {
   display: block;
-  font: 700 11px Arial;
+  font-weight: 700;
+}
+.testimonial strong {
+  font-size: 24px;
+}
+.testimonial small {
+  font-size: 19px;
 }
 .testimonial small {
   color: #777;
@@ -399,10 +391,10 @@ h3 {
   margin-top: 20px;
 }
 .dots i {
-  width: 18px;
-  height: 4px;
+  width: 57px;
+  height: 16px;
   background: #aaa;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 .dots .active {
   background: var(--orange);
@@ -424,7 +416,7 @@ textarea {
   background: var(--surface);
   color: var(--ink);
   padding: 15px;
-  font: 11px Arial;
+  font-size: 14px;
   margin-bottom: 12px;
 }
 textarea {
@@ -448,8 +440,13 @@ textarea {
 .footer .socials {
   margin-bottom: 18px;
 }
+.footer .socials a {
+  background: var(--surface);
+  border-color: var(--surface);
+  color: var(--ink);
+}
 .footer p {
-  font: 10px Arial;
+  font-size: 21px;
   margin: 0;
 }
 @media (max-width: 760px) {
@@ -461,7 +458,7 @@ textarea {
   }
   .nav {
     gap: 12px;
-    font-size: 9px;
+    font-size: 14px;
   }
   .nav a:nth-child(n + 3):not(.nav-cta) {
     display: none;
@@ -522,6 +519,6 @@ textarea {
   .footer-nav {
     gap: 12px;
     flex-wrap: wrap;
-    font-size: 9px;
+    font-size: 14px;
   }
 }

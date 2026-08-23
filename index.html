@@ -8,8 +8,15 @@
       content="A creative portfolio for a frontend developer."
     />
     <title>Quji Bichia | Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header class="site-header container">
       <a class="logo" href="#top" aria-label="Home">Quji Bichia</a>
@@ -18,16 +25,19 @@
         <a href="#about">About Me</a><a href="#services">Services</a>
         <a href="#projects">Projects</a><a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a
-        ><a class="nav-cta" href="#contact">Download CV</a>
+        ><a class="nav-cta" href="#">Download CV</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero container">
         <div class="hero-copy">
-          <p class="eyebrow">Hi! I am</p>
+          <p class="eyebrow">Hi, I am</p>
           <p class="accent-name">Quji Bichia</p>
-          <h1>Frontend<br />Developer</h1>
+          <h1>
+            <span class="heading-frontend">Frontend</span>
+            <span class="heading-developer">Developer</span>
+          </h1>
           <p class="body-copy">
             I create clear, useful and memorable digital experiences that
             connect people with products they love.
@@ -35,32 +45,35 @@
           <a class="button" href="#contact">Hire Me</a>
         </div>
         <div class="portrait-column">
-          <div
+          <img
             class="portrait portrait-hero"
-            data-photo="Add your portrait here"
-            role="img"
-            aria-label="Portrait placeholder"
-          ></div>
+            src="img/1.hi.png"
+            alt="Portrait of Quji Bichia"
+          />
           <div class="socials hero-socials" aria-label="Social links">
-            <a href="#contact" aria-label="GitHub">GH</a>
-            <a href="#contact" aria-label="LinkedIn">in</a>
-            <a href="#contact" aria-label="X (Twitter)">X</a>
-            <a
-              class="custom-social"
-              href="#contact"
-              aria-label="Custom social link"
-              >+</a
-            >
+            <a href="https://github.com/Entropher" aria-label="GitHub"
+              ><img
+                class="social-icon-large"
+                src="img/socials/github.png"
+                alt="" /></a
+            ><a
+              href="https://www.linkedin.com/in/qbichia/"
+              aria-label="LinkedIn"
+              ><img src="img/socials/linkedin.png" alt="" /></a
+            ><a href="https://x.com/QBichia" aria-label="X (Twitter)"
+              ><img src="img/socials/twitter-x.png" alt="" /></a
+            ><a href="https://datarunes.io/" aria-label="Datarunes"
+              ><img class="social-icon-large" src="img/socials/DR.png" alt=""
+            /></a>
           </div>
         </div>
       </section>
       <section class="about container split-section" id="about">
-        <div
+        <img
           class="portrait portrait-about"
-          data-photo="Add your photo here"
-          role="img"
-          aria-label="Photo placeholder"
-        ></div>
+          src="img/point.png"
+          alt="Portrait of Quji Bichia"
+        />
         <div class="section-copy">
           <h2>About Me</h2>
           <p class="body-copy">
@@ -148,7 +161,7 @@
               class="project-image project-one"
               data-photo="Project image"
             ></div>
-            <p>WEB DESIGN</p>
+            <p>Web Design</p>
             <h3>AirCalling Landing Page Design</h3>
           </article>
           <article class="project">
@@ -156,7 +169,7 @@
               class="project-image project-two"
               data-photo="Project image"
             ></div>
-            <p>WEB DESIGN</p>
+            <p>Web Design</p>
             <h3>Business Landing Page Design</h3>
           </article>
           <article class="project">
@@ -164,7 +177,7 @@
               class="project-image project-three"
               data-photo="Project image"
             ></div>
-            <p>WEB DESIGN</p>
+            <p>Web Design</p>
             <h3>Ecom Web Page Design</h3>
           </article>
         </div>
@@ -178,7 +191,11 @@
           </p>
         </div>
         <article class="testimonial">
-          <div class="avatar" data-photo="Photo"></div>
+          <img
+            class="avatar"
+            src="img/elona_musk.jpg"
+            alt="Portrait of a satisfied customer"
+          />
           <div>
             <p>
               “Lorem ipsum dolor sit amet consectetur. In enim cursus odio
@@ -209,17 +226,17 @@
               aria-label="Your name"
             /><input
               type="email"
-              placeholder="Your Email"
-              aria-label="Your email"
+              placeholder="Enter Your Email"
+              aria-label="Enter Your email"
             /><input
               type="text"
-              placeholder="Your Website"
-              aria-label="Your website"
+              placeholder="Enter Your Website"
+              aria-label="EnterYour website"
             />
           </div>
           <textarea
-            placeholder="Tell me about your project"
-            aria-label="Tell me about your project"
+            placeholder="Enter Your Message"
+            aria-label="Enter Your Message"
           ></textarea
           ><button class="button" type="submit">Contact Me</button>
         </form>
@@ -232,10 +249,18 @@
         ><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
       </nav>
       <div class="socials">
-        <a href="#contact" aria-label="GitHub">GH</a
-        ><a href="#contact" aria-label="LinkedIn">in</a
-        ><a href="#contact" aria-label="X (Twitter)">X</a
-        ><a href="#contact" aria-label="Custom">+</a>
+        <a href="https://github.com/Entropher" aria-label="GitHub"
+          ><img
+            class="social-icon-large"
+            src="img/socials/github.png"
+            alt="" /></a
+        ><a href="https://www.linkedin.com/in/qbichia/" aria-label="LinkedIn"
+          ><img src="img/socials/linkedin.png" alt="" /></a
+        ><a href="https://x.com/QBichia" aria-label="X (Twitter)"
+          ><img src="img/socials/twitter-x.png" alt="" /></a
+        ><a href="https://datarunes.io/" aria-label="Datarunes"
+          ><img class="social-icon-large" src="img/socials/DR.png" alt=""
+        /></a>
       </div>
       <p>© 2026 All Rights Reserved, Inc.</p>
     </footer>
