@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/css/styles.css" />
   </head>
 
   <body>
@@ -45,25 +45,106 @@
           <a class="button" href="#contact">Hire Me</a>
         </div>
         <div class="portrait-column">
-          <img
-            class="portrait portrait-hero"
-            src="img/1.hi.png"
-            alt="Portrait of Quji Bichia"
-          />
+          <div class="slider-wrapper" aria-label="Hero image slider">
+            <div class="slides" aria-live="polite">
+              <div class="slide active">
+                <img
+                  class="portrait portrait-hero"
+                  src="src/img/1.hi.png"
+                  alt="Portrait of Quji Bichia"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  class="portrait portrait-hero"
+                  src="src/img/2.crossed.png"
+                  alt="Quji Bichia with a crossed expression"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  class="portrait portrait-hero"
+                  src="src/img/3.confused.png"
+                  alt="Quji Bichia looking confused"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  class="portrait portrait-hero"
+                  src="src/img/4.call.jpg.png"
+                  alt="Quji Bichia on a call"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  class="portrait portrait-hero"
+                  src="src/img/5.scratch.png"
+                  alt="Quji Bichia scratching head"
+                />
+              </div>
+            </div>
+            <button
+              class="slider-arrow prev"
+              id="prev"
+              type="button"
+              aria-label="Previous slide"
+            >
+              ‹
+            </button>
+            <button
+              class="slider-arrow next"
+              id="next"
+              type="button"
+              aria-label="Next slide"
+            >
+              ›
+            </button>
+            <div class="pagination-btns" aria-label="Slider pagination">
+              <button
+                class="active"
+                type="button"
+                data-slide-number="1"
+                aria-label="Go to slide 1"
+              ></button>
+              <button
+                type="button"
+                data-slide-number="2"
+                aria-label="Go to slide 2"
+              ></button>
+              <button
+                type="button"
+                data-slide-number="3"
+                aria-label="Go to slide 3"
+              ></button>
+              <button
+                type="button"
+                data-slide-number="4"
+                aria-label="Go to slide 4"
+              ></button>
+              <button
+                type="button"
+                data-slide-number="5"
+                aria-label="Go to slide 5"
+              ></button>
+            </div>
+          </div>
           <div class="socials hero-socials" aria-label="Social links">
             <a href="https://github.com/Entropher" aria-label="GitHub"
               ><img
                 class="social-icon-large"
-                src="img/socials/github.png"
+                src="src/img/socials/github.png"
                 alt="" /></a
             ><a
               href="https://www.linkedin.com/in/qbichia/"
               aria-label="LinkedIn"
-              ><img src="img/socials/linkedin.png" alt="" /></a
+              ><img src="src/img/socials/linkedin.png" alt="" /></a
             ><a href="https://x.com/QBichia" aria-label="X (Twitter)"
-              ><img src="img/socials/twitter-x.png" alt="" /></a
+              ><img src="src/img/socials/twitter-x.png" alt="" /></a
             ><a href="https://datarunes.io/" aria-label="Datarunes"
-              ><img class="social-icon-large" src="img/socials/DR.png" alt=""
+              ><img
+                class="social-icon-large"
+                src="src/img/socials/DR.png"
+                alt=""
             /></a>
           </div>
         </div>
@@ -71,7 +152,7 @@
       <section class="about container split-section" id="about">
         <img
           class="portrait portrait-about"
-          src="img/point.png"
+          src="src/img/point.png"
           alt="Portrait of Quji Bichia"
         />
         <div class="section-copy">
@@ -193,7 +274,7 @@
         <article class="testimonial">
           <img
             class="avatar"
-            src="img/elona_musk.jpg"
+            src="src/img/elona_musk.jpg"
             alt="Portrait of a satisfied customer"
           />
           <div>
@@ -252,17 +333,18 @@
         <a href="https://github.com/Entropher" aria-label="GitHub"
           ><img
             class="social-icon-large"
-            src="img/socials/github.png"
+            src="src/img/socials/github.png"
             alt="" /></a
         ><a href="https://www.linkedin.com/in/qbichia/" aria-label="LinkedIn"
-          ><img src="img/socials/linkedin.png" alt="" /></a
+          ><img src="src/img/socials/linkedin.png" alt="" /></a
         ><a href="https://x.com/QBichia" aria-label="X (Twitter)"
-          ><img src="img/socials/twitter-x.png" alt="" /></a
+          ><img src="src/img/socials/twitter-x.png" alt="" /></a
         ><a href="https://datarunes.io/" aria-label="Datarunes"
-          ><img class="social-icon-large" src="img/socials/DR.png" alt=""
+          ><img class="social-icon-large" src="src/img/socials/DR.png" alt=""
         /></a>
       </div>
       <p>© 2026 All Rights Reserved, Inc.</p>
     </footer>
+    <script src="src/js/app.js"></script>
   </body>
 </html>
