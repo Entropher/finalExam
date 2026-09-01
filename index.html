@@ -39,66 +39,62 @@
             <span class="heading-developer">Developer</span>
           </h1>
           <p class="body-copy">
-            I create clear, useful and memorable digital experiences that
-            connect people with products they love.
+            I build fast, accessible websites and interfaces with HTML, CSS and
+            JavaScript — turning designs into products people actually enjoy
+            using.
           </p>
           <a class="button" href="#contact">Hire Me</a>
         </div>
         <div class="portrait-column">
           <div class="slider-wrapper" aria-label="Hero image slider">
+            <div class="ring" aria-hidden="true"></div>
             <div class="slides" aria-live="polite">
-              <div class="slide active">
-                <img
-                  class="portrait portrait-hero"
-                  src="src/img/1.hi.png"
-                  alt="Portrait of Quji Bichia"
-                />
+              <div class="slide slide-hi active">
+                <div class="subject">
+                  <img
+                    class="portrait-hero"
+                    src="src/img/1.hi.png"
+                    alt="Portrait of Quji Bichia"
+                  />
+                </div>
               </div>
-              <div class="slide">
-                <img
-                  class="portrait portrait-hero"
-                  src="src/img/2.crossed.png"
-                  alt="Quji Bichia with a crossed expression"
-                />
+              <div class="slide slide-crossed">
+                <div class="subject">
+                  <img
+                    class="portrait-hero"
+                    src="src/img/2.crossed.png"
+                    alt="Quji Bichia with a crossed expression"
+                  />
+                </div>
               </div>
-              <div class="slide">
-                <img
-                  class="portrait portrait-hero"
-                  src="src/img/3.confused.png"
-                  alt="Quji Bichia looking confused"
-                />
+              <div class="slide slide-confused">
+                <div class="subject">
+                  <img
+                    class="portrait-hero"
+                    src="src/img/3.confused.png"
+                    alt="Quji Bichia looking confused"
+                  />
+                </div>
               </div>
-              <div class="slide">
-                <img
-                  class="portrait portrait-hero"
-                  src="src/img/4.call.jpg.png"
-                  alt="Quji Bichia on a call"
-                />
+              <div class="slide slide-call">
+                <div class="subject">
+                  <img
+                    class="portrait-hero"
+                    src="src/img/4.call.jpg.png"
+                    alt="Quji Bichia on a call"
+                  />
+                </div>
               </div>
-              <div class="slide">
-                <img
-                  class="portrait portrait-hero"
-                  src="src/img/5.scratch.png"
-                  alt="Quji Bichia scratching head"
-                />
+              <div class="slide slide-scratch">
+                <div class="subject">
+                  <img
+                    class="portrait-hero"
+                    src="src/img/5.scratch.png"
+                    alt="Quji Bichia scratching head"
+                  />
+                </div>
               </div>
             </div>
-            <button
-              class="slider-arrow prev"
-              id="prev"
-              type="button"
-              aria-label="Previous slide"
-            >
-              ‹
-            </button>
-            <button
-              class="slider-arrow next"
-              id="next"
-              type="button"
-              aria-label="Next slide"
-            >
-              ›
-            </button>
             <div class="pagination-btns" aria-label="Slider pagination">
               <button
                 class="active"
@@ -150,30 +146,38 @@
         </div>
       </section>
       <section class="about container split-section" id="about">
-        <img
-          class="portrait portrait-about"
-          src="src/img/point.png"
-          alt="Portrait of Quji Bichia"
-        />
+        <div class="about-portrait">
+          <div class="ring" aria-hidden="true"></div>
+          <div class="subject subject-about">
+            <img
+              class="portrait-about"
+              src="src/img/point.png"
+              alt="Portrait of Quji Bichia pointing to the side"
+            />
+          </div>
+        </div>
         <div class="section-copy">
           <h2>About Me</h2>
           <p class="body-copy">
-            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-            nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
-            tempus pharetra
+            I design and build responsive websites with HTML, CSS and
+            JavaScript.
+          </p>
+          <p class="body-copy">
+            I'm currently deepening my knowledge of accessibility and SEO, and
+            I'm open to freelance work and junior developer roles.
           </p>
           <div class="skills">
             <div class="skill">
-              <span>UI Design</span><i><b style="width: 90%"></b></i>
+              <span>HTML</span><i><b style="width: 90%"></b></i>
             </div>
             <div class="skill">
-              <span>Website Design</span><i><b style="width: 85%"></b></i>
+              <span>CSS</span><i><b style="width: 80%"></b></i>
             </div>
             <div class="skill">
-              <span>App Design</span><i><b style="width: 80%"></b></i>
+              <span>Tailwind</span><i><b style="width: 45%"></b></i>
             </div>
             <div class="skill">
-              <span>Graphic Design</span><i><b style="width: 88%"></b></i>
+              <span>JavaScript</span><i><b style="width: 55%"></b></i>
             </div>
           </div>
         </div>
@@ -182,41 +186,64 @@
         <div class="section-heading">
           <h2>Services</h2>
           <p class="body-copy">
-            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-            nibh lectus netus in. Aliquet donec morbi convallis pretium
+            Here's how I can help bring your project to life, whether you're
+            starting from scratch or improving what you already have
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <span class="service-icon">▣</span>
-            <h3>UI/UX</h3>
+            <div class="service-header">
+              <img
+                class="service-icon"
+                src="src/img/icons/web-development.svg"
+                alt="Web development icon"
+              />
+              <h3>Web Development</h3>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
-              interdum
+              Websites built from scratch with clean, hand-written HTML, CSS and
+              JavaScript.
             </p>
           </article>
           <article class="service-card">
-            <span class="service-icon">▤</span>
-            <h3>Web Design</h3>
+            <div class="service-header">
+              <img
+                class="service-icon"
+                src="src/img/icons/landing-pages.svg"
+                alt="Landing page icon"
+              />
+              <h3>Landing Pages</h3>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
-              interdum
+              Focused single-page sites built to turn visitors into customers
             </p>
           </article>
           <article class="service-card">
-            <span class="service-icon">▦</span>
-            <h3>App Design</h3>
+            <div class="service-header">
+              <img
+                class="service-icon"
+                src="src/img/icons/responsive-design.svg"
+                alt="Responsive design icon"
+              />
+              <h3>Responsive Design</h3>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
-              interdum
+              Layouts that stay sharp and usable on phones, tablets and desktops
+              alike
             </p>
           </article>
           <article class="service-card">
-            <span class="service-icon">▧</span>
-            <h3>Graphic Design</h3>
+            <div class="service-header">
+              <img
+                class="service-icon"
+                src="src/img/icons/seo-optimization.svg"
+                alt="SEO optimization icon"
+              />
+              <h3>SEO Optimization</h3>
+            </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Morbi diam nisi nam diam
-              interdum
+              Semantic markup, meta tags and fast pages so search engines can
+              find you
             </p>
           </article>
         </div>
@@ -225,41 +252,75 @@
         <div class="section-heading">
           <h2>My Projects</h2>
           <p class="body-copy">
-            Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam
-            mauris est risus lectus. Phasellus consequat urna tellus
+            A few things I've built recently — landing pages and web layouts
+            coded by hand in HTML, CSS and JavaScript, responsive down to mobile
           </p>
         </div>
         <div class="filter-list" aria-label="Project filters">
-          <button class="active" type="button">All</button
-          ><button type="button">UI/UX</button
-          ><button type="button">Web Design</button
-          ><button type="button">App Design</button
-          ><button type="button">Graphic Design</button>
+          <button class="active" type="button" data-filter="all">All</button
+          ><button type="button" data-filter="web-design">Web Design</button
+          ><button type="button" data-filter="ui-ux">UI/UX</button
+          ><button type="button" data-filter="app-design">App Design</button>
         </div>
         <div class="project-grid">
-          <article class="project">
-            <div
-              class="project-image project-one"
-              data-photo="Project image"
-            ></div>
-            <p>Web Design</p>
-            <h3>AirCalling Landing Page Design</h3>
+          <article
+            class="project"
+            data-category="web-design"
+            data-tags="web-design"
+          >
+            <a
+              class="project-link"
+              href="https://entropher.github.io/midterm/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="project-image"
+                src="src/img/projects/mid.jpg"
+                alt="Multi-Page Profile Site homepage, a design gallery layout with a dark sidebar and a filterable grid of project cards"
+                loading="lazy"
+              />
+              <p>Web Design</p>
+              <h3>Multi-Page Profile Site</h3>
+            </a>
           </article>
-          <article class="project">
-            <div
-              class="project-image project-two"
-              data-photo="Project image"
-            ></div>
-            <p>Web Design</p>
-            <h3>Business Landing Page Design</h3>
+          <article class="project" data-category="ui-ux" data-tags="ui-ux">
+            <a
+              class="project-link"
+              href="https://entropher.github.io/lesson20/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="project-image"
+                src="src/img/projects/l20.jpg"
+                alt="Interactive widgets project showing a live digital clock above an image slider with prev and next controls"
+                loading="lazy"
+              />
+              <p>UI/UX</p>
+              <h3>Interactive Clock &amp; Slider Widgets</h3>
+            </a>
           </article>
-          <article class="project">
-            <div
-              class="project-image project-three"
-              data-photo="Project image"
-            ></div>
-            <p>Web Design</p>
-            <h3>Ecom Web Page Design</h3>
+          <article
+            class="project"
+            data-category="app-design"
+            data-tags="app-design"
+          >
+            <a
+              class="project-link"
+              href="https://entropher.github.io/lesson22/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="project-image"
+                src="src/img/projects/l22.jpg"
+                alt="Product Manager Dashboard showing the add-product form above a list of products with edit and delete buttons"
+                loading="lazy"
+              />
+              <p>App Design</p>
+              <h3>Product Manager Dashboard</h3>
+            </a>
           </article>
         </div>
       </section>
@@ -267,62 +328,155 @@
         <div class="section-heading">
           <h2>Testimonials</h2>
           <p class="body-copy">
-            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-            nibh lectus netus in. Aliquet donec morbi convallis pretium
+            Friendly, reliable, and detail-focused — here’s what clients and
+            collaborators have said about working together.
           </p>
         </div>
-        <article class="testimonial">
-          <img
-            class="avatar"
-            src="src/img/elona_musk.jpg"
-            alt="Portrait of a satisfied customer"
-          />
-          <div>
-            <p>
-              “Lorem ipsum dolor sit amet consectetur. In enim cursus odio
-              accumsan. Id leo urna velit neque mattis id tellus arcu
-              condimentum. Augue dictum dolor elementum convallis dignissim
-              malesuada commodo ultrices.”
-            </p>
-            <strong>Name</strong><small>CEO</small>
-          </div>
-        </article>
+        <div class="testimonial-slides" aria-live="polite">
+          <article class="testimonial active">
+            <img
+              class="avatar"
+              src="src/img/testimonials/jennifer_benzema.png"
+              alt="Portrait of a satisfied customer"
+            />
+            <div>
+              <p>
+                Quji transformed our outdated landing page into a clean, modern
+                experience that immediately felt more premium. The process was
+                smooth, fast, and highly focused on what converts.
+              </p>
+              <strong>Jennifer Benzema</strong><small>Marketing Director</small>
+            </div>
+          </article>
+          <article class="testimonial">
+            <img
+              class="avatar"
+              src="src/img/testimonials/Ilona_Meskarova.jpg"
+              alt="Portrait of a satisfied customer"
+            />
+            <div>
+              <p>
+                The site feels polished, responsive, and easy to navigate. We
+                saw a noticeable improvement in user engagement within the first
+                week, and the final result matched our vision exactly.
+              </p>
+              <strong>Ilona Meskarova</strong><small>Startup Founder</small>
+            </div>
+          </article>
+          <article class="testimonial">
+            <img
+              class="avatar"
+              src="src/img/testimonials/Yifei_Lin.png"
+              alt="Portrait of a satisfied customer"
+            />
+            <div>
+              <p>
+                Every design decision felt intentional. The layout was clean,
+                conversion-focused, and adapted beautifully across mobile and
+                desktop, which made a big difference for our audience.
+              </p>
+              <strong>Yifei Lin</strong><small>Product Lead</small>
+            </div>
+          </article>
+          <article class="testimonial">
+            <img
+              class="avatar"
+              src="src/img/testimonials/Samuella_Neumann.png"
+              alt="Portrait of a satisfied customer"
+            />
+            <div>
+              <p>
+                Communication was excellent from start to finish. We got a
+                strong visual identity, faster load times, and a more
+                professional online presence that helped us stand out in a
+                competitive market.
+              </p>
+              <strong>Samuella Neumann</strong><small>Brand Manager</small>
+            </div>
+          </article>
+        </div>
         <div class="dots" aria-label="Testimonial slides">
-          <i></i><i class="active"></i><i></i><i></i>
+          <button
+            type="button"
+            data-slide-number="1"
+            aria-label="Go to testimonial 1"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-slide-number="2"
+            aria-label="Go to testimonial 2"
+          ></button>
+          <button
+            type="button"
+            data-slide-number="3"
+            aria-label="Go to testimonial 3"
+          ></button>
+          <button
+            type="button"
+            data-slide-number="4"
+            aria-label="Go to testimonial 4"
+          ></button>
         </div>
       </section>
       <section class="contact container" id="contact">
         <div class="section-heading">
           <h2>Let's work together</h2>
           <p class="body-copy">
-            Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-            nibh lectus netus in. Aliquet donec morbi convallis pretium
+            Have a project in mind, or just want to say hello? Tell me a little
+            about what you're building and I'll get back to you within a day or
+            two
           </p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" novalidate>
           <div class="form-row">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               aria-label="Your name"
+              required
             /><input
               type="email"
+              name="email"
               placeholder="Enter Your Email"
               aria-label="Enter Your email"
+              required
             /><input
               type="text"
+              name="website"
               placeholder="Enter Your Website"
-              aria-label="EnterYour website"
+              aria-label="Enter Your website"
+              required
             />
           </div>
           <textarea
+            name="message"
             placeholder="Enter Your Message"
             aria-label="Enter Your Message"
-          ></textarea
-          ><button class="button" type="submit">Contact Me</button>
+            required
+          ></textarea>
+          <button class="button" type="submit">Contact Me</button>
         </form>
       </section>
     </main>
+    <div
+      class="success-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="success-modal__content">
+        <button
+          class="success-modal__close"
+          type="button"
+          aria-label="Close modal"
+        >
+          ×
+        </button>
+        <p>Thank you for getting in touch! We appreciate you contacting us.</p>
+      </div>
+    </div>
     <footer class="footer">
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#top">Home</a><a href="#about">About Me</a

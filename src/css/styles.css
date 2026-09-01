@@ -69,10 +69,10 @@ textarea {
 .button {
   background: var(--orange);
   color: white;
-  padding: 12px 20px;
+  padding: 10px 60px;
   border: 0;
-  border-radius: 2px;
-  font-weight: 700;
+  border-radius: 5px;
+  font-weight: 400;
   cursor: pointer;
   display: inline-block;
 }
@@ -84,21 +84,24 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 65px 95px 85px;
+  padding: 65px 0 85px;
 }
 .hero-copy {
-  max-width: 440px;
+  max-width: 560px;
+}
+.hero .body-copy {
+  max-width: none;
 }
 .eyebrow {
   color: var(--text);
-  margin: 0 0 7px;
+  margin: 0 0 7px 0;
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .accent-name {
-  margin: 0 0 2px;
+  margin: 0 0 2px 0;
   font-size: 32px;
   font-weight: 700;
 }
@@ -120,6 +123,9 @@ h1 {
   display: block;
   font-size: 100px;
 }
+.heading-developer {
+  margin-left: 160px;
+}
 h2 {
   font-size: 65px;
   font-weight: 700;
@@ -137,37 +143,34 @@ h3 {
   max-width: 470px;
   margin-bottom: 24px;
 }
-.portrait {
-  border: 8px solid var(--surface);
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 0 0 1px #ddd;
-}
-.portrait::after {
-  content: attr(data-photo);
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 25px;
-  border-radius: inherit;
-  background: rgba(27, 27, 27, 0.56);
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-}
 .slider-wrapper {
+  /* every measurement of the frame comes from these three values */
+  --circle: 340px;
+  --lift: 92px;
+  --ring: 5px;
   position: relative;
-  width: 310px;
-  height: 310px;
+  width: 400px;
+}
+.ring {
+  position: absolute;
+  left: 50%;
+  top: var(--lift);
+  transform: translateX(-50%);
+  width: var(--circle);
+  height: var(--circle);
+  border-radius: 50%;
+  border: var(--ring) solid transparent;
+  background-image:
+    linear-gradient(#f7f7f2, #f7f7f2), linear-gradient(160deg, #7a4a2a, #ff6a00);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  z-index: 1;
 }
 .slides {
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 50%;
+  height: calc(var(--circle) + var(--lift));
+  z-index: 2;
 }
 .slide {
   position: absolute;
@@ -185,41 +188,73 @@ h3 {
     opacity 0.35s ease,
     visibility 0s linear 0s;
 }
-.slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform-origin: center;
+.subject {
+  position: absolute;
+  inset: 0;
+  /* the frame itself: a circle matching the inner edge of the ring */
+  --mask-circle: radial-gradient(
+    circle calc(var(--circle) / 2 - var(--ring)) at 50%
+      calc(var(--lift) + var(--circle) / 2),
+    #000 99%,
+    transparent 100%
+  );
+  /* a plain rectangle over everything above the circle's mid-line
+     as a second mask layer that lets a photo break out of the top of the frame */
+  --mask-top: linear-gradient(#000, #000);
+  -webkit-mask-image: var(--mask-circle);
+  mask-image: var(--mask-circle);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.slide-hi .subject,
+.subject-about {
+  -webkit-mask-image: var(--mask-circle), var(--mask-top);
+  mask-image: var(--mask-circle), var(--mask-top);
+  -webkit-mask-size:
+    100% 100%,
+    100% calc(var(--lift) + var(--circle) / 2);
+  mask-size:
+    100% 100%,
+    100% calc(var(--lift) + var(--circle) / 2);
 }
 .portrait-hero {
-  width: 310px;
-  height: 310px;
-  background: #fff;
-  object-fit: cover;
-}
-.slider-arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--ink);
-  font-size: 32px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 2;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  display: block;
+  width: var(--w);
+  height: auto;
+  left: var(--x);
+  top: var(--y);
 }
-.slider-arrow.prev {
-  left: -18px;
+
+/* Slider photos styled separately */
+.slide-hi .portrait-hero {
+  --w: 89.6%;
+  --x: 6%;
+  --y: -7.8%;
 }
-.slider-arrow.next {
-  right: -18px;
+.slide-crossed .portrait-hero {
+  --w: 88.3%;
+  --x: 6.7%;
+  --y: 2%;
 }
+.slide-confused .portrait-hero {
+  --w: 88.3%;
+  --x: 7%;
+  --y: 15%;
+}
+.slide-call .portrait-hero {
+  --w: 88.7%;
+  --x: 6.7%;
+  --y: 18%;
+}
+.slide-scratch .portrait-hero {
+  --w: 73.8%;
+  --x: 14%;
+  --y: 30%;
+}
+
 .pagination-btns {
   display: flex;
   justify-content: center;
@@ -292,16 +327,31 @@ h3 {
 }
 .split-section {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 105px;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 80px;
   align-items: center;
-  padding: 105px 95px 115px;
+  padding: 60px 90px 100px;
+}
+.about-portrait {
+  /* same frame recipe as the hero slider, one size down */
+  --circle: 360px;
+  --lift: 70px;
+  --ring: 5px;
+  position: relative;
+  width: 420px;
+  height: calc(var(--circle) + var(--lift));
+  justify-self: left;
+}
+.subject-about {
+  z-index: 2;
 }
 .portrait-about {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  justify-self: center;
+  position: absolute;
+  display: block;
+  width: 89.5%;
+  height: auto;
+  left: 10.5%;
+  top: -30.4%;
 }
 .skills {
   margin-top: 32px;
@@ -353,6 +403,9 @@ h3 {
 .testimonials .section-heading .body-copy {
   max-width: 700px;
 }
+.testimonials .section-heading h2 {
+  font-weight: 500;
+}
 .services,
 .projects,
 .testimonials,
@@ -361,7 +414,8 @@ h3 {
 }
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 16px;
 }
 .service-card {
@@ -369,11 +423,26 @@ h3 {
   color: var(--ink);
   padding: 25px 20px;
   min-height: 170px;
-  border-radius: 4px;
+  border-radius: 12px;
+}
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.service-header h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 .service-icon {
-  color: var(--orange);
-  font-size: 25px;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .service-card p {
   color: #666;
@@ -388,9 +457,10 @@ h3 {
   flex-wrap: wrap;
 }
 .filter-list button {
-  padding: 8px 14px;
+  padding: 4px 10px;
+  min-height: 34px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 12px;
   background: var(--surface);
   color: #333;
   font-size: 24px;
@@ -408,12 +478,14 @@ h3 {
 }
 .project-image {
   aspect-ratio: 1 / 0.85;
-  border: 7px solid var(--surface);
-  border-radius: 3px;
-  background: #000;
-  position: relative;
+  border-radius: 12px;
+  background: var(--surface);
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.25s ease;
 }
-.project-image::after,
 .avatar::after {
   content: attr(data-photo);
   position: absolute;
@@ -433,17 +505,46 @@ h3 {
 .project h3 {
   font-size: 21px;
 }
+.project.is-hidden {
+  display: none;
+}
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.project-link:hover .project-image {
+  transform: translateY(-6px);
+}
+.testimonial-slides {
+  display: grid;
+}
+.testimonial-slides .testimonial {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
+}
+.testimonial-slides .testimonial.active {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
+}
 .testimonial {
   width: 100%;
-  max-width: 100%;
+  max-width: 940px;
   margin: auto;
-  padding: 24px 34px;
+  padding: 48px 34px;
   display: flex;
   align-items: center;
   gap: 25px;
   background: var(--surface);
   color: var(--ink);
-  border-radius: 4px;
+  border-radius: 12px;
 }
 .avatar {
   flex: 0 0 235px;
@@ -455,17 +556,49 @@ h3 {
   object-fit: cover;
 }
 .testimonial p {
+  position: relative;
+  margin: 0;
+  padding-left: 28px;
+  padding-right: 28px;
   font-size: 21px;
   line-height: 1.5;
   color: #5e5e5e;
 }
+.testimonial p::before,
+.testimonial p::after {
+  color: var(--orange);
+  font-weight: 500;
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+}
+.testimonial p::before {
+  content: "“";
+  left: 0;
+  top: 0.06em;
+  font-size: 2.1em;
+  line-height: 1;
+}
+.testimonial p::after {
+  content: "”";
+  right: 0;
+  bottom: -0.42em;
+  font-size: 2.3em;
+  line-height: 1;
+}
+.testimonial > div {
+  flex: 1;
+  padding-left: 0;
+  margin-left: 10px;
+}
 .testimonial strong,
 .testimonial small {
   display: block;
-  font-weight: 700;
+  font-weight: 500;
+  margin-left: 0;
 }
 .testimonial strong {
   font-size: 24px;
+  margin-top: 18px;
 }
 .testimonial small {
   font-size: 19px;
@@ -480,11 +613,14 @@ h3 {
   gap: 5px;
   margin-top: 20px;
 }
-.dots i {
+.dots button {
   width: 57px;
   height: 16px;
+  border: 0;
+  padding: 0;
   background: #aaa;
-  border-radius: 10px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 .dots .active {
   background: var(--orange);
@@ -503,7 +639,7 @@ input,
 textarea {
   width: 100%;
   border: 0;
-  border-radius: 4px;
+  border-radius: 12px;
   background: var(--surface);
   color: var(--ink);
   padding: 15px;
@@ -517,6 +653,51 @@ textarea {
 .contact-form .button {
   display: block;
   margin: 4px auto 0;
+}
+.success-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+  z-index: 1000;
+}
+.success-modal.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.success-modal__content {
+  position: relative;
+  width: min(90vw, 460px);
+  background: #ffffff;
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 52px 32px 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.success-modal__content p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+.success-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 28px;
+  cursor: pointer;
 }
 .footer {
   border-top: 1px solid #292929;
@@ -559,35 +740,31 @@ textarea {
   }
   .hero {
     min-height: auto;
-    padding: 60px 12px 45px;
+    padding: 60px 0 45px;
     flex-direction: column;
     align-items: flex-start;
     gap: 45px;
   }
-  .slider-wrapper {
-    width: 230px;
-  }
-  .portrait-hero {
-    width: 230px;
-    height: 230px;
+  .portrait-column {
     align-self: center;
   }
-  .slider-arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 26px;
+  .slider-wrapper {
+    --circle: 230px;
+    --lift: 62px;
+    width: 270px;
   }
   .split-section {
     grid-template-columns: 1fr;
     gap: 48px;
     padding: 80px 12px 85px;
   }
-  .portrait-about {
-    width: 220px;
-    height: 220px;
+  .about-portrait {
+    --circle: 264px;
+    --lift: 51px;
+    width: 308px;
   }
   .service-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
   .service-card {
@@ -602,7 +779,7 @@ textarea {
     aspect-ratio: 1.45 / 1;
   }
   .testimonial {
-    padding: 20px;
+    padding: 30px 20px;
     gap: 15px;
   }
   .form-row {
