@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("is-open") || false;
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  });
+
+  nav?.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      nav.classList.remove("is-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "Open menu");
+    }
+  });
+
   const slides = document.querySelectorAll(".slide");
   const pagination = document.querySelector(".pagination-btns");
   const sliderWrapper = document.querySelector(".slider-wrapper");

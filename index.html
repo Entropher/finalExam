@@ -7,6 +7,27 @@
       name="description"
       content="A creative portfolio for a frontend developer."
     />
+    <meta name="author" content="Quji Bichia" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#f7f4ed" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Quji Bichia | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="A creative portfolio for a frontend developer."
+    />
+    <meta property="og:image" content="src/img/1.hi.png" />
+    <meta property="og:image:alt" content="Portrait of Quji Bichia" />
+    <meta property="og:site_name" content="Quji Bichia" />
+
+    <meta name="instagram:title" content="Quji Bichia | Frontend Developer" />
+    <meta
+      name="instagram:description"
+      content="A creative portfolio for a frontend developer."
+    />
+    <meta name="instagram:image" content="src/img/1.hi.png" />
     <title>Quji Bichia | Frontend Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,8 +46,18 @@
         <a href="#about">About Me</a><a href="#services">Services</a>
         <a href="#projects">Projects</a><a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a
-        ><a class="nav-cta" href="#">Download CV</a>
+        ><a class="nav-cta" href="src/CV.pdf" download="Quji_Bichia_CV.pdf"
+          >Download CV</a
+        >
       </nav>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <main id="top">
@@ -40,7 +71,7 @@
           </h1>
           <p class="body-copy">
             I build fast, accessible websites and interfaces with HTML, CSS and
-            JavaScript — turning designs into products people actually enjoy
+            JavaScript – turning designs into products people actually enjoy
             using.
           </p>
           <a class="button" href="#contact">Hire Me</a>
@@ -252,7 +283,7 @@
         <div class="section-heading">
           <h2>My Projects</h2>
           <p class="body-copy">
-            A few things I've built recently — landing pages and web layouts
+            A few things I've built recently – landing pages and web layouts
             coded by hand in HTML, CSS and JavaScript, responsive down to mobile
           </p>
         </div>
@@ -328,7 +359,7 @@
         <div class="section-heading">
           <h2>Testimonials</h2>
           <p class="body-copy">
-            Friendly, reliable, and detail-focused — here’s what clients and
+            Friendly, reliable, and detail-focused – here’s what clients and
             collaborators have said about working together.
           </p>
         </div>
@@ -474,7 +505,11 @@
         >
           ×
         </button>
-        <p>Thank you for getting in touch! We appreciate you contacting us.</p>
+        <p>
+          Thank you for getting in touch!
+          <br />
+          We appreciate you contacting us.
+        </p>
       </div>
     </div>
     <footer class="footer">

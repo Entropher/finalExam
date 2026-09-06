@@ -69,15 +69,29 @@ textarea {
 .button {
   background: var(--orange);
   color: white;
-  padding: 10px 60px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 5px;
   font-weight: 400;
   cursor: pointer;
   display: inline-block;
+  transition: all 0.3s ease;
+}
+.nav a.nav-cta:hover {
+  background: #e55a00;
+  transform: scale(1.05);
+  color: white;
+}
+.menu-toggle {
+  display: none;
 }
 .button {
   font-size: 21px;
+}
+.button:hover {
+  background: #e55a00;
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.4);
 }
 .hero {
   min-height: 525px;
@@ -140,7 +154,7 @@ h3 {
   color: var(--muted);
   font-size: 21px;
   line-height: 1.6;
-  max-width: 470px;
+  max-width: 600px;
   margin-bottom: 24px;
 }
 .slider-wrapper {
@@ -559,7 +573,6 @@ h3 {
   position: relative;
   margin: 0;
   padding-left: 28px;
-  padding-right: 28px;
   font-size: 21px;
   line-height: 1.5;
   color: #5e5e5e;
@@ -568,22 +581,21 @@ h3 {
 .testimonial p::after {
   color: var(--orange);
   font-weight: 500;
-  position: absolute;
   font-family: "Poppins", sans-serif;
+  font-size: 2.1em;
 }
 .testimonial p::before {
   content: "“";
+  position: absolute;
   left: 0;
   top: 0.06em;
-  font-size: 2.1em;
   line-height: 1;
 }
 .testimonial p::after {
   content: "”";
-  right: 0;
-  bottom: -0.42em;
-  font-size: 2.3em;
-  line-height: 1;
+  line-height: 0;
+  vertical-align: -0.34em;
+  margin-left: 0.04em;
 }
 .testimonial > div {
   flex: 1;
@@ -723,48 +735,165 @@ textarea {
 }
 @media (max-width: 760px) {
   .container {
-    width: min(100% - 36px, 550px);
+    width: min(calc(100% - 36px), 550px);
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
   }
   .site-header {
-    min-height: 74px;
+    min-height: 64px;
+    position: relative;
   }
   .nav {
-    gap: 12px;
+    display: none;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    z-index: 5;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 170px;
+    padding: 8px;
+    background: var(--surface);
+    color: var(--ink);
     font-size: 14px;
   }
+  .nav.is-open {
+    display: flex;
+  }
+  .nav a {
+    padding: 8px 10px;
+  }
   .nav a:nth-child(n + 3):not(.nav-cta) {
-    display: none;
+    display: block;
   }
   .nav-cta {
-    padding: 10px 12px;
+    padding: 8px 10px;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .menu-toggle {
+    display: grid;
+    gap: 4px;
+    width: 34px;
+    height: 34px;
+    padding: 7px;
+    border: 1px solid var(--orange);
+    background: transparent;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 2px;
+    background: var(--surface);
   }
   .hero {
-    min-height: auto;
-    padding: 60px 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 45px;
+    gap: 0;
+    padding: 25px 0 48px;
   }
+  .hero-copy,
   .portrait-column {
-    align-self: center;
+    display: contents;
+  }
+  .hero .eyebrow {
+    order: 1;
+    align-self: stretch;
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .accent-name {
+    order: 2;
+    align-self: stretch;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size: 22px;
+  }
+  h1 {
+    order: 3;
+    align-self: stretch;
+    width: 100%;
+    margin-bottom: 14px;
+    font-size: 44px;
+    line-height: 0.94;
+    letter-spacing: -1px;
+  }
+  .heading-frontend,
+  .heading-developer {
+    font-size: inherit;
+  }
+  .heading-developer {
+    margin-left: 0;
+  }
+  .hero .body-copy,
+  .hero .button {
+    display: none;
+  }
+  .hero-socials {
+    order: 4;
+    align-self: flex-start;
+    margin: 0 0 11px;
+  }
+  .hero-socials a {
+    width: 22px;
+    height: 22px;
+  }
+  .hero-socials img,
+  .hero-socials .social-icon-large {
+    width: 16px;
+    height: 16px;
   }
   .slider-wrapper {
-    --circle: 230px;
-    --lift: 62px;
-    width: 270px;
+    order: 5;
+    --circle: 220px;
+    --lift: 48px;
+    width: 252px;
+    flex: 0 0 252px;
+  }
+  .pagination-btns {
+    display: none;
   }
   .split-section {
     grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 80px 12px 85px;
+    gap: 0;
+    padding: 0 0 72px;
+  }
+  .about-portrait {
+    display: none;
+  }
+  .section-copy h2,
+  h2 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  .section-copy .body-copy {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 18px;
+  }
+  .skills {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .skill {
+    margin: 16px 0;
   }
   .about-portrait {
     --circle: 264px;
     --lift: 51px;
     width: 308px;
+    display: none;
   }
   .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
   }
   .service-card {
@@ -781,6 +910,31 @@ textarea {
   .testimonial {
     padding: 30px 20px;
     gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .testimonial .avatar {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    align-self: center;
+  }
+  .testimonial > div {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+  .testimonial p {
+    padding: 0 0 0 16px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .testimonial strong {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  .testimonial small {
+    font-size: 13px;
   }
   .form-row {
     grid-template-columns: 1fr;
@@ -793,8 +947,34 @@ textarea {
     padding-bottom: 85px;
   }
   .footer-nav {
+    order: 2;
+    flex-direction: column;
     gap: 12px;
-    flex-wrap: wrap;
-    font-size: 14px;
+    margin: 0 0 26px;
+    font-size: 12px;
+  }
+  .footer .socials {
+    order: 1;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  .footer .socials a {
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--surface);
+    border-radius: 5px;
+    background: var(--surface);
+  }
+  .footer .socials img,
+  .footer .socials .social-icon-large {
+    width: 16px;
+    height: 16px;
+  }
+  .footer p {
+    order: 3;
+    margin: 0 -20px -18px;
+    padding: 28px 20px;
+    background: #111111;
+    font-size: 10px;
   }
 }
