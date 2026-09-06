@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Mobile navigation toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Hero slider and skill bar animation
   const slides = document.querySelectorAll(".slide");
   const pagination = document.querySelector(".pagination-btns");
   const sliderWrapper = document.querySelector(".slider-wrapper");
@@ -103,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   render();
   startAutoplay();
 
+  // Testimonial carousel
   const testimonials = document.querySelectorAll(
     ".testimonial-slides .testimonial",
   );
@@ -155,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTestimonials();
   startTestimonialAutoplay();
 
+  // Project filtering
   const filterList = document.querySelector(".filter-list");
   const projects = document.querySelectorAll(".project-grid .project");
 
@@ -221,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyProjectFilters(new Set());
 
+  // Contact form and success modal
   const contactForm = document.querySelector(".contact-form");
   const successModal = document.querySelector(".success-modal");
   const closeModalButton = document.querySelector(".success-modal__close");
